@@ -6,6 +6,50 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
+  font-family: "Poppins", sans-serif;
 }
 
 /* End of Rest  */
+
+body {
+  background-image: linear-gradient(90deg, #8b92c6, #fbf583);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.todo-button {
+  background: none;
+  border: none;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: #fff;
+}
+
+form button {
+  color: #8b92c6;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: #8b92c6;
+  color: #fff;
+}
