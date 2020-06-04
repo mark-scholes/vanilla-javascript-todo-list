@@ -18,11 +18,24 @@
     <header>
       <h1>Vanilla JavaScript To Do List</h1>
     </header>
+
     <form>
-      <input type="text" placeholder="Add To Do..." class="todo-input-box" />
+      <input
+        type="text"
+        placeholder="Add To Do..."
+        required
+        class="todo-input-box"
+      />
       <button type="submit" class="todo-button">
         <i class="fas fa-plus-square"></i>
       </button>
+      <div class="select">
+        <select name="todos" class="fiter-todos">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
+      </div>
     </form>
     <div class="todo-wrapper">
       <ul class="todo-list"></ul>
