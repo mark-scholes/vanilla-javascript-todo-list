@@ -21,10 +21,11 @@ function addTodo(e) {
   //Todo Li
   const todoItem = document.createElement("li");
   todoItem.classList.add("todo-text");
-  todoItem.innerText = toDoInput.value;
+  let text = toDoInput.value.trim();
+  todoItem.innerText = text;
   todoDiv.appendChild(todoItem);
   // Add todo to local storage
-  saveToLocalStorage(toDoInput.value);
+  saveToLocalStorage(text);
   //create buttons
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-todo");
@@ -35,7 +36,7 @@ function addTodo(e) {
   todoDiv.appendChild(completeButton);
   todoDiv.appendChild(deleteButton);
 
-  //append created todo to list
+  //   //append created todo to list
   todoList.appendChild(todoDiv);
   toDoInput.value = "";
 }
@@ -123,6 +124,5 @@ function removeLocalTodos(todo) {
   let currentTodos = checkLocalStorage();
   let elementToRemove = todo.children[0].innerText;
   currentTodos = currentTodos.filter((item) => item !== elementToRemove);
-
   localStorage.setItem("currentTodos", JSON.stringify(currentTodos));
 }
