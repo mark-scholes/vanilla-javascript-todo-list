@@ -15,10 +15,10 @@ filterOption.addEventListener("click", filterTodo);
 function addTodo(e) {
   event.preventDefault();
 
-  //Todo Div
+  //Create Todo Div
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
-  //Todo Li
+  // Create Todo Li
   const todoItem = document.createElement("li");
   todoItem.classList.add("todo-text");
   let text = toDoInput.value.trim();
@@ -27,16 +27,18 @@ function addTodo(e) {
   // Add todo to local storage
   saveToLocalStorage(text);
   //create buttons
+  //Delete todo button
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-todo");
   deleteButton.innerHTML = "<i class='fas fa-trash'></i>";
+  //Complete Todo button
   const completeButton = document.createElement("button");
   completeButton.classList.add("complete-todo");
   completeButton.innerHTML = "<i class='fas fa-check'></i>";
   todoDiv.appendChild(completeButton);
   todoDiv.appendChild(deleteButton);
 
-  //   //append created todo to list
+  //append created todo to list
   todoList.appendChild(todoDiv);
   toDoInput.value = "";
 }
@@ -95,6 +97,7 @@ function saveToLocalStorage(todo) {
 }
 
 function getTodos() {
+  //very similar to the add todo funciton but with some differences. It might be a good idea to make this process one funciton
   let currentTodos = checkLocalStorage();
   currentTodos.forEach((todo) => {
     //Todo Div
